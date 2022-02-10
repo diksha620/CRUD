@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&family=Playfair+Display:ital@1&display=swap');
+
+body {
+    font-family: 'Playfair Display', serif;
+    font-family: 'PT Serif', serif;
+    background-image: url("the-polygon-1562743.jpg");
+    
+    
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
+  .c1 {
+     margin-top: 40px;
+    padding: 16px;
+    opacity: 0.7;
+    width:30%;
+    margin-left: 5vw;
+    border-radius: 40px;
+    background-color: black;
+    height: 32vw;
+  }
+  .c1 h2 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+  .c2 {
+   margin-top: -430px;
+   padding: 16px;
+   opacity: 0.7;
+   width: 55%;
+   margin-left: 45vw;
+   border-radius: 40px;
+   background-color: black;
+   height: auto;
+ }
+
+  .c2 h2 {
+        font-size: 28px;
+        text-align: center;
+        font-weight: bold;
+        color: blue;
+  }
+  
+  input[type=text], input[type=password] ,input[type=email]{
+    width: 50%;
+    padding: 12px;
+    margin: 5px 0 22px ;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    margin-left: 3vw;
+    margin-bottom: 3vw;
+    color: black;
+    font-size: 20px;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus , input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  #btnn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.9;
+    border-radius: 10px;
+    margin-left: 7vw;
+    /* margin-top: 0.5vw; */
+    outline: none;
+
+  }
+  
+  #btnn:hover {
+    opacity: 1;
+  }
+  #btnn :active{
+      transform: translateY(70px);
+  }
+  
+  #btnn1{
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.9;
+    border-radius: 10px;
+    margin-left: 7vw;
+    /* margin-top: 0.5vw; */
+    outline: none;
+
+  }
+  
+  #btnn1:hover {
+    opacity: 1;
+  }
+  #btnn1 :active{
+      transform: translateY(70px);
+  }
+  
+
+  #confirmation{
+    height: 300px;
+    width: 400px;
+    /* background-color: gray; */
+    position: absolute;
+    top: 15vw;
+    left: 35vw;
+    transition: 1s ease-in-out;
+    border-radius: 7px;
+    background-color: cadetblue;
+  }
+  #confirmation h3{
+    text-align: center;
+    margin-top: 8vw;
+  }

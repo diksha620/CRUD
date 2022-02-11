@@ -1,41 +1,36 @@
-var incr = function () {
-  var id = 1;
-  return function () {
-    return id++;
-  };
-};
+
 
 var up = false;
 let upIndex = -1;
 let records = [];
 const details = document.querySelector("#details");
-// let c1 = document.getElementById(")
-//console.log(details);
+
+
 details.addEventListener("submit", (e) => {
   e.preventDefault();
   e.target.reset();
 });
+
 function saveData() {
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
   let psw = document.getElementById("psw").value;
-  // let data = {name:name,email:email,psw:psw}
+ 
   if (up) {
     if (upIndex !== -1) {
-       id = incr();
-        const updatedObj = {
-          id:id(),
-          name: name,
-          email: email,
-          psw: psw,
-          date : new Date().toDateString(),
-        };
-        let rec = JSON.parse(localStorage.getItem("users"));
-        rec[upIndex] = updatedObj;
-        console.log(rec);
-        localStorage.setItem("users", JSON.stringify(rec));
-        upIndex = -1;
-      }
+       const updatedObj = {
+        id: new Date().getTime(),
+        name: name,
+        email: email,
+        psw: psw,
+        date: new Date().toDateString(),
+      };
+      let rec = JSON.parse(localStorage.getItem("users"));
+      rec[upIndex] = updatedObj;
+      console.log(rec);
+      localStorage.setItem("users", JSON.stringify(rec));
+      upIndex = -1;
+    }
 
     showData();
   } else {
@@ -49,12 +44,11 @@ function saveData() {
     ) {
       alert("duplicate data");
     } else {
-      id = incr();
       records.push({
         name: name,
         email: email,
         psw: psw,
-        id: id(),
+        id: new Date().getTime(),
         date: new Date().toDateString(),
       });
       localStorage.setItem("users", JSON.stringify(records));
@@ -88,8 +82,8 @@ function showData() {
 }
 
 const remove = (id) => {
-  document.getElementById('c2').style.display = "none"
-  document.getElementById('c1').style.display = "none"
+  document.getElementById("c2").style.display = "none";
+  document.getElementById("c1").style.display = "none";
   document.getElementById("confirm").innerHTML = "";
   let mainDiv = document.createElement("div");
 
@@ -98,9 +92,9 @@ const remove = (id) => {
                       <button id="yes" onclick = "yes(${id})" style = "text-align: center; margin-left: 8vw; margin-top: 3vw; background-color:black; color:white;padding6px;border-radius:8px">YES</button>
                       <button id="no" onclick = "no()" style = "text-align: center; margin-left: 5vw; margin-top: 3vw; background-color:black; color:white;padding6px;border-radius:8px">NO</button></div>`;
   document.getElementById("confirm").appendChild(mainDiv);
-  
+
   // console.log(mainDiv)
-   yes = (id) => {
+  yes = (id) => {
     let records = [];
     records = JSON.parse(localStorage.getItem("users"))
       ? JSON.parse(localStorage.getItem("users"))
@@ -108,18 +102,18 @@ const remove = (id) => {
     a = records.filter((item) => item.id !== id);
     localStorage.clear();
     localStorage.setItem("users", JSON.stringify(a));
-    document.getElementById('confirmation').style.display = "none"
-    document.getElementById('c2').style.display = "block"
-  document.getElementById('c1').style.display = "block"
+    document.getElementById("confirmation").style.display = "none";
+    document.getElementById("c2").style.display = "block";
+    document.getElementById("c1").style.display = "block";
     showData();
   };
-                       
-no = () =>{
-  document.getElementById('confirmation').style.display = "none"
-  document.getElementById('c2').style.display = "block"
-  document.getElementById('c1').style.display = "block"
-                        // console.log()
-  }
+
+  no = () => {
+    document.getElementById("confirmation").style.display = "none";
+    document.getElementById("c2").style.display = "block";
+    document.getElementById("c1").style.display = "block";
+    // console.log()
+  };
 };
 
 const update = (id) => {
@@ -128,7 +122,7 @@ const update = (id) => {
   records = JSON.parse(localStorage.getItem("users"))
     ? JSON.parse(localStorage.getItem("users"))
     : [];
-  a = records.filter((item) => item.id === id);
+  const a = records.filter((item) => item.id === id);
   document.getElementById("name").value = a[0].name;
   document.getElementById("email").value = a[0].email;
   document.getElementById("psw").value = a[0].psw;
@@ -137,16 +131,4 @@ const update = (id) => {
       upIndex = j;
     }
   }
-  // if (upIndex !== -1) {
-  //   const updatedObj = {
-  //     id: incr(),
-  //     name: a[0].name,
-  //     email: a[0].email,
-  //     psw: a[0].psw,
-  //   };
-  //   records[upIndex] = updatedObj;
-  //   console.log(records);
-  //   localStorage.setItem("users", JSON.stringify(records));
-   // upIndex = -1;
-  
 };

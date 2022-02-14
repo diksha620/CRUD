@@ -13,7 +13,7 @@ body {
   }
   
   /* Add padding to containers */
-  .c1 {
+  .container-left {
      margin-top: 40px;
     padding: 16px;
     opacity: 0.7;
@@ -23,13 +23,13 @@ body {
     background-color: black;
     height: 32vw;
   }
-  .c1 h2 {
+  .container-left h2 {
     font-size: 24px;
     text-align: center;
     font-weight: bold;
     color: blue;
 }
-  .c2 {
+  .container-right {
    margin-top: -430px;
    padding: 16px;
    opacity: 0.7;
@@ -40,7 +40,7 @@ body {
    height: auto;
  }
 
-  .c2 h2 {
+  .container-right h2 {
         font-size: 28px;
         text-align: center;
         font-weight: bold;

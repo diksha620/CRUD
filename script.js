@@ -42,8 +42,6 @@ details.addEventListener("submit", (e) => {
     error.innerText = "you have entered invalid email";
   }
   }
-  
-
 }
 function saveData() {
   let name = document.getElementById("name").value;

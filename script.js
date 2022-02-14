@@ -2,6 +2,7 @@ var updateState = false;
 let upIndex = -1;
 let records = [];
 const details = document.querySelector("#details");
+const error = document.getElementById("error");
 
 details.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -14,20 +15,20 @@ details.addEventListener("submit", (e) => {
   let password = document.getElementById("password").value;
   let count = 0;
 
-  if(name === ""   ){
-    alert("please fill the name");
+  if(name === ""){
+  document.getElementById('error').innerText = "please enter the missing details";
   }
   else{
     count = count + 1;
   }
   if(email === ""){
-    alert("please fill the email");
+    document.getElementById('error').innerText = "please enter the missing details";
   }
   else{
     count = count + 1;
   }
   if(password === ""){
-    alert("please fill the password");
+    document.getElementById('error').innerText = "please enter the missing details";
   }
   else{
     count = count + 1;
@@ -38,7 +39,7 @@ details.addEventListener("submit", (e) => {
   {
     saveData();
   }else{
-    alert("You have entered an invalid email address!")
+    error.innerText = "you have entered invalid email";
   }
   }
   
